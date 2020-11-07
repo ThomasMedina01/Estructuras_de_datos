@@ -62,6 +62,57 @@ try:
                 Entrada.saltar()
                 Entrada.separador()
 
+        if opcion == 2:
+            Entrada.limpiar_pantalla()
+            nombre = input("Nombre del archivo con su extension: ")
+            Archivo.comprobar_file(nombre)
+            movimientos.append(nombre)
+            
+            Entrada.saltar()
+            Entrada.separador()
+
+            dir_actual = os.getcwd()
+            destino = input("Directorio destino del archivo: ")
+            Archivo.comprobar_dir(destino)
+            dir_mov.append(destino)
+            
+            Entrada.saltar()
+            Entrada.separador()
+            
+            tipo.append(0)
+            archivo = Archivo(nombre, destino)
+            archivo.copiar()
+            
+            Entrada.saltar()
+            Entrada.separador()
+            
+        if opcion == 3:
+            Entrada.limpiar_pantalla()
+            nombre = input("Nombre del archivo con su extension: ")
+            Archivo.comprobar_file(nombre)
+            movimientos.append(nombre)
+            
+            Entrada.saltar()
+            Entrada.separador()
+            
+            dir_actual = os.getcwd()
+            destino = input("Directorio destino del archivo: ")
+            Archivo.comprobar_dir(destino)
+            dir_mov.append(destino)
+            
+            Entrada.saltar()
+            Entrada.separador()
+            
+            archivo = Archivo(nombre, destino)
+            archivo.mover()
+            tipo.append(1)
+            
+            Entrada.saltar()
+            Entrada.separador()
+
+                
+
+
     
             
 
