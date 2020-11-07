@@ -109,6 +109,45 @@ try:
             
             Entrada.saltar()
             Entrada.separador()
+            
+        if opcion == 4:
+            tupla_dir = sys.getsizeof(tuple(dir_mov))
+            peso_nombres = sys.getsizeof(movimientos)
+            Entrada.saltar()
+            Entrada.separador()
+            print("Espacio en memoria.")
+            print(f"Tupla de directorios: {tupla_dir} bytes.")
+            print(f"Lista de archivos: {peso_nombres} bytes.")
+            Entrada.saltar()
+            Entrada.separador()
+            if len(dir_mov) == 0 and len(movimientos) == 0:
+                print("No hay movimientos de archivos disponibles.")
+            else:
+                historial = list(zip(movimientos, dir_mov, tipo))
+                print("Historial de copias realizadas.")
+                print()
+                for i, e, z in historial:
+                    if z == 0:
+                        print("Tipo de operacion: Copia")
+                    else:
+                        print("Tipo de operacion: Movimiento")
+                    print(f"Archivo: {i}")
+                    print(f"Origen: {dir_actual}")
+                    print(f"Destino: {e}")
+                    
+                    Entrada.saltar()
+                    Entrada.separador()
+                    
+        if opcion == 5:
+            Entrada.saltar()
+            print("EJECUCION FINALIZADA")
+            Entrada.separador()
+            break
+                    
+except:
+    print(f"Ha ocurrido un error inesperado {sys.exc_info()[0]}")
+                
+
 
                 
 
