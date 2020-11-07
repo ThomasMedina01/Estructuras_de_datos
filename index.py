@@ -38,7 +38,29 @@ try:
                 contador +=4
                 Entrada.bloqueo(10)
         Entrada.saltar()
-    
+
+        if opcion == 1:
+            Entrada.limpiar_pantalla()
+            Archivo.ver_directorio()
+            Entrada.saltar()
+            Entrada.separador()
+            salida = Entrada.validacion_entero("Presione 1 para salir o 2 para cambiar de directorio : ")
+            while salida not in (1, 2):
+                salida = Entrada.validacion_entero("Presione 1 para salir o 2 para cambiar de directorio : ")
+                
+            if salida == 1:
+                Entrada.limpiar_pantalla()
+                Entrada.separador()
+                pass
+                
+            if salida == 2:
+                Entrada.limpiar_pantalla()
+                directorio = input("Introduce el nuevo directorio: ")
+                directorio = Archivo.comprobar_dir(directorio)
+                dir_actual = os.chdir(directorio)
+                Archivo.ver_directorio()
+                Entrada.saltar()
+                Entrada.separador()
 
     
             
